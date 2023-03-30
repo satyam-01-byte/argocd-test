@@ -1,5 +1,5 @@
 apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
+kind: Application
 metadata:
   name: infra-apps
 spec:
@@ -11,7 +11,7 @@ spec:
       - path: example/infra/*
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{path[1]}}'
     spec:
       project: default
       source:
