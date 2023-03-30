@@ -16,13 +16,13 @@ spec:
       project: default
       source:
         directory:
-          recurse: false #true
+          recurse: true
         repoURL: https://github.com/satyam-01-byte/argocd-test-gh.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path[1]}}'
+        namespace: '{{path[2]}}'
       syncPolicy:
         automated:
           prune: true
