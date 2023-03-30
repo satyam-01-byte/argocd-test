@@ -8,7 +8,7 @@ spec:
       repoURL: https://github.com/satyam-01-byte/argocd-test-gh.git
       revision: HEAD
       directories:
-      - path: example/infra/*
+      - path: example/*/*
   template:
     metadata:
       name: '{{path[1]}}'
