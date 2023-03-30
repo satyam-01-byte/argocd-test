@@ -8,15 +8,15 @@ spec:
       repoURL: https://github.com/satyam-01-byte/argocd-test-gh.git
       revision: HEAD
       directories:
-      - path: infra/*
+      - path: example/infra/*
   template:
     metadata:
-      name: '{{path[1]}}'
+      name: '{{path.basename}}'
     spec:
       project: default
       source:
         directory:
-          recurse: false #true
+          recurse: true
         repoURL: https://github.com/satyam-01-byte/argocd-test-gh.git
         targetRevision: HEAD
         path: '{{path}}'
