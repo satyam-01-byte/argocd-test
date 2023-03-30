@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: test-app-3
-  namespace: production
+  namespace: prod
   labels:
     app.kubernetes.io/name:  test-app-3
 spec:
