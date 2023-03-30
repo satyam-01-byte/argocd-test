@@ -8,10 +8,10 @@ spec:
       repoURL: https://github.com/satyam-01-byte/argocd-test-gh.git
       revision: HEAD
       directories:
-      - path: '{{path}}' #example/infra/*
+      - path: "example/infra/*"
   template:
     metadata:
-      name: '{{path}}'
+      name: {{path.basename}}
     spec:
       project: default
       source:
@@ -19,10 +19,10 @@ spec:
           recurse: true
         repoURL: https://github.com/satyam-01-byte/argocd-test-gh.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: {{path}}
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path}}'
+        namespace: {{path[1]}}
       syncPolicy:
         automated:
           prune: true
