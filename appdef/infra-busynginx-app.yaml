@@ -19,7 +19,7 @@ spec:
         #   recurse: true
         repoURL: https://github.com/satyam-01-byte/argocd-test-gh.git
         targetRevision: HEAD
-        path: example/infra/busynginx/* #'{{path}}'
+        path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{path.basename}}'
