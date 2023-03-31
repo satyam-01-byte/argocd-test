@@ -13,7 +13,7 @@ spec:
   #   metadata:
   #     name: '{{path.basename}}'
   #   spec:
-    project: infra
+    project: default
     source:
       # directory:
       #   recurse: true
@@ -22,7 +22,7 @@ spec:
       path: example/infra/* #'{{path}}'
     destination:
       server: https://kubernetes.default.svc
-      namespace: argocd #'{{path.basename}}'
+      namespace: '{{path.basename}}'
     syncPolicy:
       automated:
         prune: true
