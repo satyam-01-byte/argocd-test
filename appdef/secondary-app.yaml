@@ -9,6 +9,8 @@ spec:
       revision: HEAD
       directories:
       - path: example/*
+      - path: example/*/*
+      - path: example/*/*/*
   template:
     metadata:
       name: '{{path.basename}}'
