@@ -8,10 +8,10 @@ spec:
       repoURL: https://github.com/satyam-01-byte/argocd-test-gh.git
       revision: HEAD
       directories:
-      - path: example/*/*/*
+      - path: example/infra/busynginx/*
   template:
     metadata:
-      name: '{{path[3]}}'
+      name: '{{path.basename}}'
     spec:
       project: default
       source:
@@ -22,7 +22,7 @@ spec:
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path[3]}}'
+        namespace: '{{path.basename}}'
       syncPolicy:
         automated:
           prune: true
